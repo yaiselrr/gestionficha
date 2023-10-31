@@ -10,8 +10,8 @@ namespace Core.Entidades
     public class Persona
     {
         [Key]
-        [Column("N_INTERNO")]
-        public int NInterno { get; set; }
+        [Column("ID")]
+        public int Id { get; set; }
 
         [StringLength(60)]
         [Column("NOMBRE")]

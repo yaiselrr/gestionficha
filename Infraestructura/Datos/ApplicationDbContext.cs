@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Core.Entidades;
 using Microsoft.EntityFrameworkCore;
@@ -14,5 +15,16 @@ namespace Infraestructura.Datos
         }
 
         public DbSet<Persona> Persona { get; set; }
+        public DbSet<Producto> Producto { get; set; }
+        public DbSet<Orden> Orden { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
+
     }
 }

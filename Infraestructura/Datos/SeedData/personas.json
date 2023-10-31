@@ -1,0 +1,23 @@
+[
+  {
+    "Nombre": "Juan",
+    "Apellidos": "Pérez Pérez",
+    "usuario_red": "juan.perez",
+    "n_interno_resp": 5,
+    "is_admin": false
+  },  
+  {
+    "Nombre": "Pedro",
+    "Apellidos": "Pérez Pérez",
+    "usuarioRed": "pedro.perez",
+    "nInternoResp": 5,
+    "is_admin": false
+  },
+  {
+    "Nombre": "Luis",
+    "Apellidos": "Pérez Pérez",
+    "usuario_red": "luis.perez",
+    "n_interno_resp": 5,
+    "is_admin": true
+  }  
+]

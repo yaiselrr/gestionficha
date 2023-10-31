@@ -1,0 +1,33 @@
+[
+  {
+    "Id": 1,
+    "Nombre": "Coca Cola",
+    "Descripcion": "Refresco con gas y azúcar",
+    "Precio": 5
+  },
+  {
+    "Id": 2,
+    "Nombre": "Pepsi Cola",
+    "Descripcion": "Refresco con gas y azúcar",
+    "Precio": 4
+  },
+  {
+    "Id": 3,
+    "Nombre": "Tropi Cola",
+    "Descripcion": "Refresco con gas y azúcar",
+    "Precio": 3
+  },
+  {
+    "Id": 4,
+    "Nombre": "Agua Natural Ciego Montero",
+    "Descripcion": "Refresco con gas y minerales",
+    "Precio": 1
+  },
+  {
+    "Id": 5,
+    "Nombre": "Jugo Natural de Mango",
+    "Descripcion": "Refresco 100 % natural sin azucar",
+    "Precio": 6
+  }
+  
+]
