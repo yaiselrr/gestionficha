@@ -14,18 +14,17 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class PersonaController : ControllerBase
     {
-        private readonly IPersonaRepositorio _repo;
+        private readonly IRepositorio<Persona> _repo;
         
-        public PersonaController(IPersonaRepositorio repo)
+        public PersonaController(IRepositorio<Persona> repo)
         {
             _repo = repo;
-
         }
 
         [HttpGet]
         public async Task<ActionResult<List<Persona>>> GetPersonas()
         { 
-            var persona = await _repo.GetPersonasAsync();
+            var persona = await _repo.GetAllAsync();
 
             return Ok(persona);
         }
@@ -33,7 +32,7 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Persona>> GetPersona(int id)
         {
-            return await _repo.GetPersonaAsync(id);
+            return await _repo.GetAsync(id);
         }
     }
 }

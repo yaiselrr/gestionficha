@@ -14,38 +14,43 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ProductoController : ControllerBase
     {
-        private readonly IProductoRepositorio _repo;
+        private readonly IRepositorio<Producto> _repo;
         
-        public ProductoController(IProductoRepositorio repo)
+        public ProductoController(IRepositorio<Producto> repo)
         {
             _repo = repo;
-
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Producto>>> GetProductos()
+        public async Task<ActionResult<List<Producto>>> GetAll()
         { 
-            var producto = await _repo.GetProductosAsync();
+            var producto = await _repo.GetAllAsync();
 
             return Ok(producto);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Producto>> GetProducto(int id)
+        public async Task<ActionResult<Producto>> Get(int id)
         {
-            return await _repo.GetProductoAsync(id);
+            return await _repo.GetAsync(id);
         }
 
         [HttpPost]
-        public async Task<ActionResult<bool>> CreateUpdateCliente(Producto producto)
+        public async Task<ActionResult<bool>> Create(Producto producto)
         {
-            return await _repo.CreateUpdateProducto(producto);
+            return await _repo.Create(producto);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<bool>> Update(Producto producto)
+        {
+            return await _repo.Update(producto);
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<bool>> DeleteCliente(int id)
+        public async Task<ActionResult<bool>> Delete(int id)
         {
-            return await _repo.DeleteProducto(id);
+            return await _repo.Delete(id);
         }
     }
 }
